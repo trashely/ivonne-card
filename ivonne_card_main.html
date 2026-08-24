@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOIR & VERDANT — Interior Studio</title>
+  <meta name="description" content="A refined Singapore interior design studio creating warm, characterful spaces." />
+  <style>
+    :root{
+      --ink:#151513;
+      --black:#0c0d0b;
+      --forest:#173b31;
+      --forest-2:#234c3e;
+      --wine:#54232c;
+      --wine-dark:#35171d;
+      --cream:#e9e1d4;
+      --sand:#c9bdac;
+      --muted:#9c958b;
+      --line:rgba(233,225,212,.18);
+      --white:#f3eee5;
+      --max:1240px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--ink); color:var(--cream);
+      font-family:Arial, Helvetica, sans-serif; line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    img{width:100%;display:block}
+    .container{width:min(calc(100% - 48px),var(--max));margin:auto}
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:.2em;font-size:11px;
+      color:var(--muted);margin-bottom:18px
+    }
+    h1,h2,h3{font-family:Georgia, "Times New Roman", serif;font-weight:400;line-height:.98}
+    h1{font-size:clamp(58px,9vw,128px);max-width:950px}
+    h2{font-size:clamp(44px,6vw,82px)}
+    h3{font-size:28px}
+    .btn{
+      display:inline-flex;align-items:center;gap:14px;padding:15px 22px;
+      border:1px solid rgba(233,225,212,.35);font-size:12px;
+      text-transform:uppercase;letter-spacing:.14em;transition:.25s ease
+    }
+    .btn:hover{background:var(--cream);color:var(--ink)}
+    .btn.primary{background:var(--wine);border-color:var(--wine)}
+    .btn.primary:hover{background:#6b303a;color:var(--white)}
+
+    header{
+      position:absolute;top:0;left:0;width:100%;z-index:10;
+      padding:25px 0;border-bottom:1px solid rgba(233,225,212,.12)
+    }
+    nav{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:Georgia,serif;font-size:20px;letter-spacing:.08em}
+    .logo span{color:#a67b68}
+    .navlinks{display:flex;gap:30px;font-size:11px;text-transform:uppercase;letter-spacing:.15em}
+    .menu{display:none}
+
+    .hero{
+      min-height:100vh;display:flex;align-items:flex-end;position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(12,13,11,.90),rgba(12,13,11,.42) 58%,rgba(23,59,49,.30)),
+        linear-gradient(0deg,rgba(12,13,11,.78),transparent 65%),
+        url('https://images.squarespace-cdn.com/content/v1/64ed43ec29391a727fe6be52/1766351095120-3RYFW4SZVUBHPBJP1TZN/plushdesigninteriors_hi-res_photograph_modern_art_deco_living_922690ea-ce05-4345-874f-c04f4022c7fd_1.png') center/cover no-repeat;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(0deg,rgba(12,13,11,.95),transparent 45%);
+      pointer-events:none
+    }
+    .hero-content{position:relative;z-index:1;padding:150px 0 70px}
+    .hero-kicker{color:#c5aa9d;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:25px}
+    .hero h1 em{font-style:italic;color:#b68c7d}
+    .hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:45px;gap:30px}
+    .hero-copy{max-width:500px;color:#c3bcb1;font-size:15px}
+
+    section{padding:120px 0}
+    .intro{background:var(--cream);color:var(--ink)}
+    .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:100px;align-items:end}
+    .intro h2{max-width:850px}
+    .intro h2 span{color:var(--wine)}
+    .intro-copy{color:#514d47;max-width:420px}
+    .intro-copy p{margin-bottom:28px}
+
+    .split-cards{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+    .split-card{padding:60px;display:flex;flex-direction:column;justify-content:flex-end;min-height:600px;position:relative;overflow:hidden}
+    .split-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 70%)}
+    .split-card > *{position:relative;z-index:1}
+    .residential{
+      background:
+        linear-gradient(0deg,rgba(30,12,16,.76),rgba(30,12,16,.08) 68%),
+        url('https://d1hy6t2xeg0mdl.cloudfront.net/image/540757/769b1845d7/700-width') center/cover no-repeat;
+    }
+    .commercial{
+      background:
+        linear-gradient(0deg,rgba(7,20,16,.78),rgba(7,20,16,.10) 68%),
+        url('https://www.oitoemponto.com/xms/img/x1200/49e06/cT05MCZmPXdlYnAmZmx0cltdPQ/L08zbS8tME0zWnJTbS95NHNObmpkU0s3bS80UXNiUm5TUzFhN2puU2NzZWp1bVNzVGpuc1pzSGp1SnJzeFozTUZjL3ZqME1GUy8uTTdqUzNrako3anNlanVtU3ZqME1GU3N6b3R6dGRrcg.webp') center/cover no-repeat;
+    }
+    .split-card h3{font-size:48px;margin-bottom:12px}
+    .split-card p{color:#d0c8bd;max-width:380px;margin-bottom:28px}
+
+    .process{background:var(--black)}
+    .process-head{display:flex;justify-content:space-between;gap:40px;margin-bottom:75px}
+    .process-head p{max-width:360px;color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+    .step{padding:28px 20px 10px 0;border-right:1px solid var(--line);min-height:230px}
+    .step:last-child{border-right:0}
+    .number{font-size:11px;color:#9d7568;letter-spacing:.15em;margin-bottom:45px}
+    .step h3{font-size:23px;margin-bottom:12px}
+    .step p{color:var(--muted);font-size:13px;max-width:190px}
+
+    .portfolio{background:#e4dccf;color:var(--ink)}
+    .portfolio-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px}
+    .portfolio-head p{max-width:340px;color:#615c55}
+    .projects{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .project{min-height:520px;position:relative;overflow:hidden;background:#b4aa9d}
+    .project.small{min-height:250px}
+    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,13,11,.65),transparent 55%)}
+    .project.one{
+      background:
+        linear-gradient(0deg,rgba(12,13,11,.62),rgba(12,13,11,.05) 65%),
+        url('https://www.oitoemponto.com/xms/img/x1200/49e06/cT05MCZmPXdlYnAmZmx0cltdPQ/L08zbS8tME0zWnJTbS95NHNObmpkU0s3bS80UXNiUm5TUzFhN2puU2NzZWp1bVNzVGpuc1pzSGp1SnJzeFozTUZjL3ZqME1GUy8uTTdqUzNrako3anNlanVtU3ZqME1GU3N6b3R6dGRrcg.webp') center/cover no-repeat;
+    }
+    .project.two{
+      background:
+        linear-gradient(0deg,rgba(25,12,16,.68),rgba(25,12,16,.05) 65%),
+        url('https://d1hy6t2xeg0mdl.cloudfront.net/image/540757/769b1845d7/700-width') center/cover no-repeat;
+    }
+    .project.three{
+      background:
+        linear-gradient(0deg,rgba(8,24,19,.68),rgba(8,24,19,.04) 65%),
+        url('https://images.squarespace-cdn.com/content/v1/64ed43ec29391a727fe6be52/1766351095120-3RYFW4SZVUBHPBJP1TZN/plushdesigninteriors_hi-res_photograph_modern_art_deco_living_922690ea-ce05-4345-874f-c04f4022c7fd_1.png') center/cover no-repeat;
+    }
+    .project-info{position:absolute;bottom:25px;left:28px;z-index:1;color:white}
+    .project-info small{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#d6ccc0}
+    .project-info h3{font-size:32px;margin-top:7px}
+    .project-stack{display:grid;gap:18px}
+
+    .manifesto{background:var(--forest);text-align:center}
+    .manifesto h2{max-width:1000px;margin:0 auto}
+    .manifesto h2 em{color:#bfa28f}
+
+    .stories{background:var(--cream);color:var(--ink)}
+    .stories-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}
+    .quote{font-family:Georgia,serif;font-size:clamp(27px,3.2vw,46px);line-height:1.08}
+    .quote:before{content:"“";color:var(--wine);font-size:80px;display:block;height:50px}
+    .story-meta{margin-top:35px;color:#746d64;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+
+    .cta{background:var(--wine-dark);text-align:center}
+    .cta h2{max-width:900px;margin:0 auto 35px}
+    .cta p{color:#c9bdb6;max-width:500px;margin:0 auto 35px}
+
+    .faq{background:var(--black)}
+    .faq-head{margin-bottom:45px}
+    details{border-top:1px solid var(--line);padding:23px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:Georgia,serif;font-size:23px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-family:Arial;font-size:20px;color:#a67b68}
+    details[open] summary:after{content:"−"}
+    details p{max-width:700px;color:var(--muted);padding-top:18px;font-size:14px}
+
+    footer{background:#080907;padding:55px 0 25px}
+    .footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:65px}
+    .footer-top h2{font-size:55px;max-width:650px}
+    .footer-links{display:flex;gap:55px}
+    .footer-links div{display:flex;flex-direction:column;gap:12px}
+    .footer-links a{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.13em}
+    .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;color:#68645d;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+
+    @media(max-width:800px){
+      .container{width:min(calc(100% - 32px),var(--max))}
+      .navlinks{display:none}.menu{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+      .hero-content{padding:135px 0 45px}.hero-bottom{display:block}.hero-copy{margin-bottom:25px}
+      section{padding:80px 0}
+      .intro-grid,.stories-grid{grid-template-columns:1fr;gap:40px}
+      .split-cards,.projects{grid-template-columns:1fr}
+      .split-card{min-height:470px;padding:35px}.split-card h3{font-size:40px}
+      .process-head,.portfolio-head{display:block}.process-head p,.portfolio-head p{margin-top:20px}
+      .steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(3){border-top:1px solid var(--line)}.step:nth-child(4){border-top:1px solid var(--line)}
+      .project{min-height:430px}.project.small{min-height:280px}
+      .footer-top{display:block}.footer-links{margin-top:40px;gap:35px}.footer-top h2{font-size:44px}
+      .footer-bottom{display:block}.footer-bottom span{display:block;margin-top:10px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">NOIR <span>&</span> VERDANT</a>
+        <div class="navlinks">
+          <a href="#studio">Studio</a>
+          <a href="#work">Work</a>
+          <a href="#approach">Approach</a>
+          <a href="#stories">Stories</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="menu" href="#contact">Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-kicker">Singapore · Interior Architecture · Since 2018</div>
+        <h1>Spaces with <em>depth.</em><br>Homes with soul.</h1>
+        <div class="hero-bottom">
+          <p class="hero-copy">We create considered interiors for people who value atmosphere, materiality and the quiet details that make a place feel unmistakably yours.</p>
+          <a class="btn primary" href="#contact">Begin a project <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="studio">
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow">A different kind of interior studio</div>
+          <h2>Designed around <span>how you live.</span></h2>
+        </div>
+        <div class="intro-copy">
+          <p>From first sketch to final handover, we balance architecture, warmth and everyday function. No templates. No unnecessary noise. Just spaces with a strong point of view.</p>
+          <a class="btn" href="#approach">Discover our approach <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:0">
+      <div class="split-cards">
+        <article class="split-card residential">
+          <div class="eyebrow">01 · Residential</div>
+          <h3>Homes that feel lived in.</h3>
+          <p>HDB, BTO, condominium and landed homes shaped around your routines, collections and sense of comfort.</p>
+          <a class="btn" href="#work">Explore residential <span>→</span></a>
+        </article>
+        <article class="split-card commercial">
+          <div class="eyebrow">02 · Commercial</div>
+          <h3>Spaces with presence.</h3>
+          <p>Studios, offices, hospitality and retail environments designed to express a clear identity.</p>
+          <a class="btn" href="#work">Explore commercial <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="process" id="approach">
+      <div class="container">
+        <div class="process-head">
+          <div>
+            <div class="eyebrow">Our approach</div>
+            <h2>Thoughtful from<br>start to finish.</h2>
+          </div>
+          <p>Our process keeps every decision intentional, transparent and connected to the way the final space should feel.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="number">01</div><h3>Listen</h3><p>We learn how you live, what you need and what you want your space to become.</p></div>
+          <div class="step"><div class="number">02</div><h3>Shape</h3><p>Layouts, moodboards and material directions turn ideas into a clear design language.</p></div>
+          <div class="step"><div class="number">03</div><h3>Refine</h3><p>We develop the details, specifications and quotation until everything feels right.</p></div>
+          <div class="step"><div class="number">04</div><h3>Build</h3><p>Our team coordinates the works, trades and schedule with careful attention to detail.</p></div>
+          <div class="step"><div class="number">05</div><h3>Live</h3><p>We hand over a considered home and stay close through the final finishing touches.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="work">
+      <div class="container">
+        <div class="portfolio-head">
+          <div>
+            <div class="eyebrow">Selected work</div>
+            <h2>Quietly bold.</h2>
+          </div>
+          <p>A selection of interiors where restrained palettes, tactile materials and thoughtful planning do the talking.</p>
+        </div>
+        <div class="projects">
+          <article class="project one">
+            <div class="project-info"><small>Joo Chiat · Residential</small><h3>Terracotta House</h3></div>
+          </article>
+          <div class="project-stack">
+            <article class="project small two">
+              <div class="project-info"><small>River Valley · Condo</small><h3>Dark Oak Retreat</h3></div>
+            </article>
+            <article class="project small three">
+              <div class="project-info"><small>Tiong Bahru · Apartment</small><h3>Verdant Modern</h3></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="container">
+        <div class="eyebrow">Our philosophy</div>
+        <h2>“The best rooms don't ask for attention. They make you want to <em>stay.</em>”</h2>
+      </div>
+    </section>
+
+    <section class="stories" id="stories">
+      <div class="container stories-grid">
+        <div>
+          <div class="eyebrow">Client story</div>
+          <h2>A home that grew with them.</h2>
+        </div>
+        <div>
+          <div class="quote">We wanted something darker and more characterful, but still warm. The studio understood the balance immediately — every room now feels like us.</div>
+          <div class="story-meta">Eleanor & Marcus · 4-room HDB · Queenstown</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="eyebrow">Ready when you are</div>
+        <h2>Let's make a space worth coming home to.</h2>
+        <p>Tell us a little about your home, your ideas and what you want it to feel like. We'll take it from there.</p>
+        <a class="btn primary" href="mailto:hello@noirandverdant.sg">Start a conversation <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <div class="faq-head">
+          <div class="eyebrow">Questions, answered</div>
+          <h2>Before we begin.</h2>
+        </div>
+        <details><summary>What types of homes do you design?</summary><p>We work across HDB, BTO, condominium and landed homes, as well as selected commercial spaces.</p></details>
+        <details><summary>Can you work with an existing style or furniture?</summary><p>Absolutely. We can build around pieces you already love and create a cohesive palette around them.</p></details>
+        <details><summary>Do you handle renovation works?</summary><p>Yes. The studio can coordinate design development, documentation, renovation works and project scheduling as one connected process.</p></details>
+        <details><summary>How do I get started?</summary><p>Send us a short note about your property and what you have in mind. We'll arrange an initial conversation to understand the project.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <h2>Make room for a little more character.</h2>
+        <div class="footer-links">
+          <div>
+            <a href="#studio">Studio</a><a href="#work">Portfolio</a><a href="#approach">Approach</a>
+          </div>
+          <div>
+            <a href="#stories">Stories</a><a href="#contact">Contact</a><a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>NOIR & VERDANT · SINGAPORE</span>
+        <span>© 2026 All rights reserved · Photography references: Qanvast / Oito em Ponto</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
